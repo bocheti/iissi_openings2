@@ -51,13 +51,15 @@ const loadModel = (sequelize, DataTypes) => {
     logo: DataTypes.STRING,
     heroImage: DataTypes.STRING,
     status: {
+      allowNull: false,
       type: DataTypes.ENUM,
       values: [
         'online',
         'offline',
         'closed',
         'temporarily closed'
-      ]
+      ],
+      defaultValue: 'offline'
     },
     restaurantCategoryId: {
       allowNull: false,
